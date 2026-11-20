@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   enquiryForm();
   newsletter();
   scrollProgress();
+  initHero();
   initJourneys();
   initMap();
   faqSearch();
@@ -71,6 +72,62 @@ function navDropdowns() {
   });
 }
 
+/* hero rotator: three scenes, fading every 6.5s. Later scenes are only
+   fetched once the first paint is done, so the phone stays light. */
+function initHero() {
+  const slides = Array.from(document.querySelectorAll('.hero__img'));
+  const dots = Array.from(document.querySelectorAll('.hero__dot'));
+  if (slides.length < 2) return;
+
+  let index = 0;
+  let timer = null;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const load = (el) => {
+    if (!el || !el.dataset.src) return;
+    el.src = el.dataset.src;
+    if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+    delete el.dataset.src;
+    delete el.dataset.srcset;
+  };
+
+  const go = (next) => {
+    index = (next + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+    dots.forEach((d, i) => {
+      d.classList.toggle('is-active', i === index);
+      d.setAttribute('aria-selected', String(i === index));
+    });
+    load(slides[(index + 1) % slides.length]);
+  };
+
+  const start = () => {
+    window.clearInterval(timer);
+    if (!reduce) timer = window.setInterval(() => go(index + 1), 6500);
+  };
+
+  dots.forEach((dot, i) =>
+    dot.addEventListener('click', () => {
+      go(i);
+      start();
+    })
+  );
+
+  const arm = () => {
+    load(slides[1]);
+    load(slides[2]);
+    start();
+  };
+
+  if (document.readyState === 'complete') window.setTimeout(arm, 900);
+  else window.addEventListener('load', () => window.setTimeout(arm, 900), { once: true });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) window.clearInterval(timer);
+    else start();
+  });
+}
+
 function scrollProgress() {
   const bar = document.getElementById('progress');
   const update = () => {
@@ -115,7 +172,7 @@ const JOURNEYS = [
     nights: 15,
     price: 42000,
     tier: 'ultra',
-    img: 'assets/images/nile.jpg',
+    img: 'assets/images/nile',
     priceNote: 'Starting from USD 42,000 per person',
     days: [
       ['Days 1–2', 'Giza and Cairo — the pyramids, the museum, a private guide throughout.'],
@@ -132,7 +189,7 @@ const JOURNEYS = [
     nights: 13,
     price: 24650,
     tier: 'ultra',
-    img: 'assets/images/gorilla.jpg',
+    img: 'assets/images/gorilla',
     priceNote: 'Starting from USD 24,650 per person',
     days: [
       ['Days 1–2', 'Kigali and the road to Volcanoes National Park.'],
@@ -149,7 +206,7 @@ const JOURNEYS = [
     nights: 8,
     price: 15150,
     tier: 'ultra',
-    img: 'assets/images/mara-camp.jpg',
+    img: 'assets/images/mara-camp',
     priceNote: 'Low season from USD 15,150 per person',
     days: [
       ['Day 1', 'Nairobi — met at the airport, overnight before the bush.'],
@@ -164,7 +221,7 @@ const JOURNEYS = [
     nights: 9,
     price: 23600,
     tier: 'ultra',
-    img: 'assets/images/serengeti.jpg',
+    img: 'assets/images/serengeti',
     priceNote: 'Low season from USD 23,600 per person',
     days: [
       ['Day 1', 'Nairobi arrival and overnight.'],
@@ -180,7 +237,7 @@ const JOURNEYS = [
     nights: 11,
     price: 46200,
     tier: 'ultra',
-    img: 'assets/images/group.jpg',
+    img: 'assets/images/group',
     priceNote: 'Starting from USD 46,200 per person',
     days: [
       ['Days 1–3', 'Kigali and Volcanoes National Park — gorilla trekking with permits.'],
@@ -196,7 +253,7 @@ const JOURNEYS = [
     nights: 11,
     price: 19400,
     tier: 'signature',
-    img: 'assets/images/crater.jpg',
+    img: 'assets/images/crater',
     priceNote: 'Green season from USD 19,400 per person',
     days: [
       ['Days 1–3', 'Amboseli — elephant herds beneath Kilimanjaro.'],
@@ -212,7 +269,7 @@ const JOURNEYS = [
     nights: 8,
     price: 16450,
     tier: 'signature',
-    img: 'assets/images/amboseli.jpg',
+    img: 'assets/images/amboseli',
     priceNote: 'Starting from USD 16,450 per person',
     days: [
       ['Days 1–3', 'Amboseli and the tuskers.'],
@@ -227,7 +284,7 @@ const JOURNEYS = [
     nights: 7,
     price: 16750,
     tier: 'signature',
-    img: 'assets/images/migration.jpg',
+    img: 'assets/images/migration',
     priceNote: 'Starting from USD 16,750 per person',
     days: [
       ['Days 1–3', 'Northern Serengeti — river crossing camps.'],
@@ -242,7 +299,7 @@ const JOURNEYS = [
     nights: 6,
     price: 38450,
     tier: 'villa',
-    img: 'assets/images/family.jpg',
+    img: 'assets/images/family',
     priceNote: 'Starting from USD 38,450 per family',
     days: [
       ['Days 1–2', 'Nairobi — Hemingways, the giraffe centre, early nights.'],
@@ -257,7 +314,7 @@ const JOURNEYS = [
     nights: 7,
     price: 30100,
     tier: 'ultra',
-    img: 'assets/images/kopje.jpg',
+    img: 'assets/images/kopje',
     priceNote: 'Starting from USD 30,100 per person',
     days: [
       ['Days 1–2', 'Ngorongoro Crater rim.'],
@@ -272,7 +329,7 @@ const JOURNEYS = [
     nights: 6,
     price: 12125,
     tier: 'signature',
-    img: 'assets/images/island.jpg',
+    img: 'assets/images/island',
     priceNote: 'Starting from USD 12,125 per person',
     days: [
       ['Day 1', 'Arrive Zanzibar and transfer to the atoll.'],
@@ -378,7 +435,11 @@ function initJourneys() {
 
   function openSheet(i) {
     const d = JOURNEYS[i];
-    img.src = d.img;
+    const base = d.img;
+    img.src = base + '-960.webp';
+    img.srcset =
+      base + '-480.webp 480w, ' + base + '-720.webp 720w, ' + base + '-960.webp 960w';
+    img.sizes = '(min-width:520px) 520px, 100vw';
     img.alt = d.title;
     eyebrow.textContent = d.eyebrow;
     title.textContent = d.title;
@@ -707,10 +768,11 @@ function buildResult() {
   const calc = computeJourney();
   const stops = itineraryStops();
 
-  document.getElementById('rTotal').textContent = money(calc.total);
+  document.getElementById('rTotal').textContent = `${calc.nights} nights`;
   document.getElementById('rPer').textContent =
-    `${money(calc.perPerson)} per person · ${calc.nights} nights · ${calc.guests} travelling` +
-    (calc.season < 1 ? ' · green season' : calc.season > 1.1 ? ' · peak season' : '');
+    `${calc.guests} travelling · ${MONTH_NAME[state.month - 1]}` +
+    (calc.season < 1 ? ' · green season' : calc.season > 1.1 ? ' · peak season' : '') +
+    ' · quotation on request';
 
   const daysEl = document.getElementById('rDays');
   let day = 1;
@@ -732,7 +794,7 @@ function buildResult() {
     `Month: ${MONTH_NAME[state.month - 1]}\n` +
     `Extras: ${state.extras.length ? state.extras.join(', ') : 'none'}\n` +
     `Itinerary: ${stops.map((s) => `${s.name} (${s.nights}n)`).join(' → ')}\n` +
-    `Estimated from ${money(calc.total)} (${money(calc.perPerson)} pp)`;
+    'Please send me a quotation for this journey.';
 
   document.getElementById('rWhats').href = 'https://wa.me/254791038070?text=' + encodeURIComponent(summary);
   document.getElementById('rMail').href =
@@ -760,7 +822,7 @@ function render() {
   document.getElementById('cSummary').innerHTML = rows
     .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`)
     .join('');
-  document.getElementById('cSumPrice').textContent = money(calc.total);
+  document.getElementById('cSumPrice').textContent = `${calc.nights} nights`;
 }
 
 /* --------------------------------------------------------------------------
