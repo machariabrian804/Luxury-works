@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   enquiryForm();
   newsletter();
   scrollProgress();
+  initImages();
   initHero();
   initJourneys();
   initMap();
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('year').textContent = new Date().getFullYear();
 });
 
-const money = (n) => 'USD ' + Math.round(n).toLocaleString('en-US');
 
 /* --------------------------------------------------------------------------
    NAVIGATION
@@ -72,6 +72,41 @@ function navDropdowns() {
   });
 }
 
+/* swap a deferred image's data-src / data-srcset into live attributes */
+function loadImage(img) {
+  if (!img || !img.dataset.src) return;
+  if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+  img.src = img.dataset.src;
+  delete img.dataset.src;
+  delete img.dataset.srcset;
+}
+
+/* every image below the hero carries data-src instead of src, so a phone
+   opens on the logo and first hero frame (~90 KB) rather than the whole
+   page (~840 KB). Each is fetched once it comes within 200px of the view. */
+function initImages() {
+  const pending = Array.from(document.querySelectorAll('img[data-src]:not(.hero__img)'));
+  if (!pending.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    pending.forEach(loadImage);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '200px 0px' }
+  );
+
+  pending.forEach((img) => observer.observe(img));
+}
+
 /* hero rotator: three scenes, fading every 6.5s. Later scenes are only
    fetched once the first paint is done, so the phone stays light. */
 function initHero() {
@@ -83,22 +118,12 @@ function initHero() {
   let timer = null;
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const load = (el) => {
-    if (!el || !el.dataset.src) return;
-    el.src = el.dataset.src;
-    if (el.dataset.srcset) el.srcset = el.dataset.srcset;
-    delete el.dataset.src;
-    delete el.dataset.srcset;
-  };
-
   const go = (next) => {
     index = (next + slides.length) % slides.length;
     slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
-    dots.forEach((d, i) => {
-      d.classList.toggle('is-active', i === index);
-      d.setAttribute('aria-selected', String(i === index));
-    });
-    load(slides[(index + 1) % slides.length]);
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    loadImage(slides[index]);
+    if (!reduce) loadImage(slides[(index + 1) % slides.length]);
   };
 
   const start = () => {
@@ -114,8 +139,7 @@ function initHero() {
   );
 
   const arm = () => {
-    load(slides[1]);
-    load(slides[2]);
+    if (!reduce) slides.slice(1).forEach(loadImage);
     start();
   };
 
@@ -576,16 +600,24 @@ function faqSearch() {
 /* --------------------------------------------------------------------------
    SAFARI CURATOR
    -------------------------------------------------------------------------- */
-const RATES = { signature: 780, ultra: 1450, villa: 4800 };
 const WHERE_META = {
-  kenya: { label: 'Kenya', mult: 1, ppn: 0 },
-  tanzania: { label: 'Tanzania', mult: 1.05, ppn: 0 },
-  rwanda: { label: 'Rwanda', mult: 1, ppn: 420 },
-  zanzibar: { label: 'Zanzibar', mult: 1.1, ppn: 0 },
-  combo: { label: 'Kenya, Tanzania and Zanzibar', mult: 1.08, ppn: 0 },
-  open: { label: "Designer's choice", mult: 1.02, ppn: 0 },
+  kenya: { label: 'Kenya' },
+  tanzania: { label: 'Tanzania' },
+  rwanda: { label: 'Rwanda' },
+  zanzibar: { label: 'Zanzibar' },
+  combo: { label: 'Kenya, Tanzania and Zanzibar' },
+  open: { label: "Designer's choice" },
 };
-const SEASON = { 1: 1, 2: 1, 3: 1, 4: 0.82, 5: 0.82, 6: 1, 7: 1.15, 8: 1.15, 9: 1.15, 10: 1.15, 11: 0.85, 12: 1.15 };
+const SEASON_LABEL = {
+  4: 'green season',
+  5: 'green season',
+  7: 'peak season',
+  8: 'peak season',
+  9: 'peak season',
+  10: 'peak season',
+  11: 'green season',
+  12: 'peak season',
+};
 const WHO_LABEL = {
   couple: 'Two of us',
   honeymoon: 'Honeymoon',
@@ -692,26 +724,12 @@ function initCurator() {
 }
 
 function computeJourney() {
-  const meta = WHERE_META[state.where];
-  const season = SEASON[state.month] || 1;
   const beach = state.extras.includes('beach');
-  const nights = state.nights + (beach ? 4 : 0);
-  const guests = state.guests;
-
-  let base;
-  if (state.tier === 'villa') {
-    base = RATES.villa * nights * season;
-  } else {
-    base = (RATES[state.tier] + meta.ppn) * nights * guests * meta.mult * season;
-  }
-
-  let extras = 0;
-  if (state.extras.includes('balloon')) extras += 480 * guests;
-  if (state.extras.includes('gorilla')) extras += 1500 * guests;
-  if (beach) extras += 620 * guests * 4;
-
-  const total = Math.round((base + extras) / 50) * 50;
-  return { total, nights, guests, season, beach, perPerson: total / guests };
+  return {
+    nights: state.nights + (beach ? 4 : 0),
+    guests: state.guests,
+    seasonLabel: SEASON_LABEL[state.month] || '',
+  };
 }
 
 function itineraryStops() {
@@ -771,7 +789,7 @@ function buildResult() {
   document.getElementById('rTotal').textContent = `${calc.nights} nights`;
   document.getElementById('rPer').textContent =
     `${calc.guests} travelling · ${MONTH_NAME[state.month - 1]}` +
-    (calc.season < 1 ? ' · green season' : calc.season > 1.1 ? ' · peak season' : '') +
+    (calc.seasonLabel ? ` · ${calc.seasonLabel}` : '') +
     ' · quotation on request';
 
   const daysEl = document.getElementById('rDays');

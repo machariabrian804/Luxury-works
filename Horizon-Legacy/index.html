@@ -153,10 +153,10 @@
     <a href="#journeys" class="link-gold">View the journey <span class="arrow">→</span></a>
   </aside>
 
-  <div class="hero__dots" role="tablist" aria-label="Scenes from our journeys">
-    <button class="hero__dot is-active" role="tab" aria-selected="true" aria-label="A lodge deck at sunset"></button>
-    <button class="hero__dot" role="tab" aria-selected="false" aria-label="Balloons over the Maasai Mara"></button>
-    <button class="hero__dot" role="tab" aria-selected="false" aria-label="Elephants below Kilimanjaro"></button>
+  <div class="hero__dots" role="group" aria-label="Scenes from our journeys">
+    <button type="button" class="hero__dot is-active" aria-label="Show scene 1: a lodge deck at sunset"></button>
+    <button type="button" class="hero__dot" aria-label="Show scene 2: balloons over the Maasai Mara"></button>
+    <button type="button" class="hero__dot" aria-label="Show scene 3: elephants below Kilimanjaro"></button>
   </div>
 </section>
 
@@ -174,7 +174,7 @@
 <section class="story" id="story">
   <div class="shell story__grid">
     <div class="story__media">
-      <img src="assets/images/mara-960.webp" srcset="assets/images/mara-480.webp 480w, assets/images/mara-720.webp 720w, assets/images/mara-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A hot air balloon drifting over the Maasai Mara at sunrise">
+      <img data-src="assets/images/mara-960.webp" data-srcset="assets/images/mara-480.webp 480w, assets/images/mara-720.webp 720w, assets/images/mara-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A hot air balloon drifting over the Maasai Mara at sunrise">
       <div class="story__quote">
         <p>“We are not interpreting Kenya for you. <em>We are from here.</em>”</p>
         <span>The J&amp;B Horizon Legacy Founders</span>
@@ -279,7 +279,7 @@
       <!-- 1 -->
       <article class="card card--wide">
         <div class="card__media">
-          <img loading="lazy" decoding="async" src="assets/images/nile-960.webp" srcset="assets/images/nile-480.webp 480w, assets/images/nile-720.webp 720w, assets/images/nile-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A luxury river vessel on the Nile at sunset near Luxor">
+          <img decoding="async" data-src="assets/images/nile-960.webp" data-srcset="assets/images/nile-480.webp 480w, assets/images/nile-720.webp 720w, assets/images/nile-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A luxury river vessel on the Nile at sunset near Luxor">
           <span class="flag">New · By private jet</span>
         </div>
         <div class="card__body">
@@ -300,7 +300,7 @@
 
       <!-- 2 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/gorilla-960.webp" srcset="assets/images/gorilla-480.webp 480w, assets/images/gorilla-720.webp 720w, assets/images/gorilla-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A mountain gorilla in the misty rainforest of Volcanoes National Park"><span class="flag">New journey 2027/28</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/gorilla-960.webp" data-srcset="assets/images/gorilla-480.webp 480w, assets/images/gorilla-720.webp 720w, assets/images/gorilla-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A mountain gorilla in the misty rainforest of Volcanoes National Park"><span class="flag">New journey 2027/28</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Rwanda · Tanzania · Kenya</p>
           <h3 class="card__title">Gorillas, the Crater, the Serengeti <em>and the Maasai Mara</em></h3>
@@ -317,7 +317,7 @@
 
       <!-- 3 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/mara-camp-960.webp" srcset="assets/images/mara-camp-480.webp 480w, assets/images/mara-camp-720.webp 720w, assets/images/mara-camp-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A tented suite with a private plunge pool on the escarpment above the Maasai Mara"><span class="flag">Fourth night free</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/mara-camp-960.webp" data-srcset="assets/images/mara-camp-480.webp 480w, assets/images/mara-camp-720.webp 720w, assets/images/mara-camp-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A tented suite with a private plunge pool on the escarpment above the Maasai Mara"><span class="flag">Fourth night free</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Our headline journey</p>
           <h3 class="card__title">8 Day Ultra Luxury <em>Maasai Mara Safari</em></h3>
@@ -334,7 +334,7 @@
 
       <!-- 4 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/serengeti-960.webp" srcset="assets/images/serengeti-480.webp 480w, assets/images/serengeti-720.webp 720w, assets/images/serengeti-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A lodge terrace above the Serengeti plains at dusk"><span class="flag">Two private reserves</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/serengeti-960.webp" data-srcset="assets/images/serengeti-480.webp 480w, assets/images/serengeti-720.webp 720w, assets/images/serengeti-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A lodge terrace above the Serengeti plains at dusk"><span class="flag">Two private reserves</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Our headline journey</p>
           <h3 class="card__title">9 Day Ultra Luxury <em>Maasai Mara &amp; Serengeti Safari</em></h3>
@@ -351,7 +351,7 @@
 
       <!-- 5 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/group-960.webp" srcset="assets/images/group-480.webp 480w, assets/images/group-720.webp 720w, assets/images/group-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Guests in an open-sided safari vehicle on the plains at sunset"><span class="flag">Small group · June 2027</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/group-960.webp" data-srcset="assets/images/group-480.webp 480w, assets/images/group-720.webp 720w, assets/images/group-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Guests in an open-sided safari vehicle on the plains at sunset"><span class="flag">Small group · June 2027</span></div>
         <div class="card__body">
           <p class="card__eyebrow">6 to 12 guests</p>
           <h3 class="card__title">The Ultimate East Africa <em>Luxury Safari</em></h3>
@@ -369,7 +369,7 @@
 
       <!-- 6 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/crater-960.webp" srcset="assets/images/crater-480.webp 480w, assets/images/crater-720.webp 720w, assets/images/crater-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="The Ngorongoro Crater seen from its forested rim at dawn"><span class="flag">Save USD 13,500</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/crater-960.webp" data-srcset="assets/images/crater-480.webp 480w, assets/images/crater-720.webp 720w, assets/images/crater-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="The Ngorongoro Crater seen from its forested rim at dawn"><span class="flag">Save USD 13,500</span></div>
         <div class="card__body">
           <p class="card__eyebrow">New for 2027 · Green season</p>
           <h3 class="card__title">12 Day Ultra Luxury <em>Kenya &amp; Tanzania Safari</em></h3>
@@ -386,7 +386,7 @@
 
       <!-- 7 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/amboseli-960.webp" srcset="assets/images/amboseli-480.webp 480w, assets/images/amboseli-720.webp 720w, assets/images/amboseli-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Elephants below snow-capped Mount Kilimanjaro in Amboseli"><span class="flag">Best seller</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/amboseli-960.webp" data-srcset="assets/images/amboseli-480.webp 480w, assets/images/amboseli-720.webp 720w, assets/images/amboseli-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Elephants below snow-capped Mount Kilimanjaro in Amboseli"><span class="flag">Best seller</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Private guided · fly in</p>
           <h3 class="card__title">9 Day Luxury <em>Kenya Safari</em></h3>
@@ -403,7 +403,7 @@
 
       <!-- 8 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/migration-960.webp" srcset="assets/images/migration-480.webp 480w, assets/images/migration-720.webp 720w, assets/images/migration-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Wildebeest crossing the Mara River during the Great Migration"><span class="flag">Limited availability</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/migration-960.webp" data-srcset="assets/images/migration-480.webp 480w, assets/images/migration-720.webp 720w, assets/images/migration-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Wildebeest crossing the Mara River during the Great Migration"><span class="flag">Limited availability</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Great Migration · July to October 2027</p>
           <h3 class="card__title">8 Day <em>Great Migration</em> Safari</h3>
@@ -420,7 +420,7 @@
 
       <!-- 9 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/family-960.webp" srcset="assets/images/family-480.webp 480w, assets/images/family-720.webp 720w, assets/images/family-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A private family safari villa with a pool in the Maasai Mara"><span class="flag">Exclusive use</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/family-960.webp" data-srcset="assets/images/family-480.webp 480w, assets/images/family-720.webp 720w, assets/images/family-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="A private family safari villa with a pool in the Maasai Mara"><span class="flag">Exclusive use</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Family · whole villa, one party</p>
           <h3 class="card__title">Private Villa <em>Family Safari</em></h3>
@@ -437,7 +437,7 @@
 
       <!-- 10 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/kopje-960.webp" srcset="assets/images/kopje-480.webp 480w, assets/images/kopje-720.webp 720w, assets/images/kopje-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Granite kopje boulders and an open safari vehicle in the southern Serengeti"><span class="flag">Three private concessions</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/kopje-960.webp" data-srcset="assets/images/kopje-480.webp 480w, assets/images/kopje-720.webp 720w, assets/images/kopje-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="Granite kopje boulders and an open safari vehicle in the southern Serengeti"><span class="flag">Three private concessions</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Our most exclusive</p>
           <h3 class="card__title">8 Day Tanzania <em>Grand Circuit</em></h3>
@@ -454,7 +454,7 @@
 
       <!-- 11 -->
       <article class="card">
-        <div class="card__media"><img loading="lazy" decoding="async" src="assets/images/island-960.webp" srcset="assets/images/island-480.webp 480w, assets/images/island-720.webp 720w, assets/images/island-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="andBeyond Mnemba Island off the north east coast of Zanzibar"><span class="flag">A private island · 12 bandas</span></div>
+        <div class="card__media"><img decoding="async" data-src="assets/images/island-960.webp" data-srcset="assets/images/island-480.webp 480w, assets/images/island-720.webp 720w, assets/images/island-960.webp 960w" sizes="(min-width:900px) 46vw, 100vw" alt="andBeyond Mnemba Island off the north east coast of Zanzibar"><span class="flag">A private island · 12 bandas</span></div>
         <div class="card__body">
           <p class="card__eyebrow">Mnemba Atoll · Zanzibar</p>
           <h3 class="card__title">7 Day Mnemba Island <em>Luxury Beach Safari</em></h3>
@@ -486,7 +486,7 @@
 
     <div class="style-grid">
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/villas-960.webp" srcset="assets/images/villas-480.webp 480w, assets/images/villas-720.webp 720w, assets/images/villas-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private safari villa courtyard and pool at dusk" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/villas-960.webp" data-srcset="assets/images/villas-480.webp 480w, assets/images/villas-720.webp 720w, assets/images/villas-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private safari villa courtyard and pool at dusk">
         <span class="style-card__tag">Family</span>
         <h3>Family Safaris</h3>
         <p>Private villas, interconnecting suites and a pace set by your children. Whole-villa exclusivity means no child supplement and no shared dining room.</p>
@@ -495,7 +495,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/mara-camp-960.webp" srcset="assets/images/mara-camp-480.webp 480w, assets/images/mara-camp-720.webp 720w, assets/images/mara-camp-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A tented family suite with a private plunge pool on the escarpment above the Mara" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/mara-camp-960.webp" data-srcset="assets/images/mara-camp-480.webp 480w, assets/images/mara-camp-720.webp 720w, assets/images/mara-camp-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A tented family suite with a private plunge pool on the escarpment above the Mara">
         <span class="style-card__tag">Three generations</span>
         <h3>Multigenerational Safaris</h3>
         <p>Grandparents, parents and children under one roof, with two vehicles when the days need to run at different speeds.</p>
@@ -504,7 +504,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/suite-960.webp" srcset="assets/images/suite-480.webp 480w, assets/images/suite-720.webp 720w, assets/images/suite-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A tented honeymoon suite with a freestanding bath looking out over the plains" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/suite-960.webp" data-srcset="assets/images/suite-480.webp 480w, assets/images/suite-720.webp 720w, assets/images/suite-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A tented honeymoon suite with a freestanding bath looking out over the plains">
         <span class="style-card__tag">Couples</span>
         <h3>Honeymoon Safaris</h3>
         <p>Bush first, then beach. Ten to fourteen nights, a private vehicle throughout, and honeymoon rates requested at every camp.</p>
@@ -513,7 +513,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/honeymoon-960.webp" srcset="assets/images/honeymoon-480.webp 480w, assets/images/honeymoon-720.webp 720w, assets/images/honeymoon-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private candlelit dinner set on a safari lodge deck at dusk" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/honeymoon-960.webp" data-srcset="assets/images/honeymoon-480.webp 480w, assets/images/honeymoon-720.webp 720w, assets/images/honeymoon-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private candlelit dinner set on a safari lodge deck at dusk">
         <span class="style-card__tag">Gay &amp; LGBTQ+</span>
         <h3>Gay &amp; LGBTQ+ Safaris</h3>
         <p>Kenya is not always an easy country for same-sex couples, and we will not pretend otherwise. What we can do is hand-pick the lodges and hotels that are genuinely welcoming — checked in person, briefed on your booking, with your room and bedding confirmed in writing before you fly.</p>
@@ -522,7 +522,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/hero-960.webp" srcset="assets/images/hero-480.webp 480w, assets/images/hero-720.webp 720w, assets/images/hero-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Lounge chairs and a pool on a shaded safari lodge deck at sunset" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/hero-960.webp" data-srcset="assets/images/hero-480.webp 480w, assets/images/hero-720.webp 720w, assets/images/hero-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Lounge chairs and a pool on a shaded safari lodge deck at sunset">
         <span class="style-card__tag">Slower pace</span>
         <h3>Senior Safaris</h3>
         <p>Shorter drives, later mornings, single-level suites and camps chosen for how easy they are to move around rather than how famous they are.</p>
@@ -531,7 +531,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/group-960.webp" srcset="assets/images/group-480.webp 480w, assets/images/group-720.webp 720w, assets/images/group-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A small group of guests in an open-sided safari vehicle at sunset" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/group-960.webp" data-srcset="assets/images/group-480.webp 480w, assets/images/group-720.webp 720w, assets/images/group-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="A small group of guests in an open-sided safari vehicle at sunset">
         <span class="style-card__tag">6 to 12 guests</span>
         <h3>Private Group Travel</h3>
         <p>Friends, milestone birthdays and celebrations, with one guide, one vehicle and a single bill at the end.</p>
@@ -540,7 +540,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/bushbeach-960.webp" srcset="assets/images/bushbeach-480.webp 480w, assets/images/bushbeach-720.webp 720w, assets/images/bushbeach-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A palm-fringed beach with a dhow and beach loungers" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/bushbeach-960.webp" data-srcset="assets/images/bushbeach-480.webp 480w, assets/images/bushbeach-720.webp 720w, assets/images/bushbeach-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A palm-fringed beach with a dhow and beach loungers">
         <span class="style-card__tag">Bush then beach</span>
         <h3>Bush &amp; Beach Safaris</h3>
         <p>Six or seven nights on safari, then four or five on the Indian Ocean — Zanzibar, Diani, the Seychelles or Mauritius.</p>
@@ -549,7 +549,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/villas-960.webp" srcset="assets/images/villas-480.webp 480w, assets/images/villas-720.webp 720w, assets/images/villas-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private safari villa courtyard and plunge pool at dusk" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/villas-960.webp" data-srcset="assets/images/villas-480.webp 480w, assets/images/villas-720.webp 720w, assets/images/villas-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A private safari villa courtyard and plunge pool at dusk">
         <span class="style-card__tag">Exclusive use</span>
         <h3>Private Villas</h3>
         <p>A whole house, one party, your own pool and your own chef. The simplest way to travel with young children or a large family.</p>
@@ -558,7 +558,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/short-960.webp" srcset="assets/images/short-480.webp 480w, assets/images/short-720.webp 720w, assets/images/short-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A sunrise coffee stop beside a safari vehicle on the plains" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/short-960.webp" data-srcset="assets/images/short-480.webp 480w, assets/images/short-720.webp 720w, assets/images/short-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A sunrise coffee stop beside a safari vehicle on the plains">
         <span class="style-card__tag">4 to 6 nights</span>
         <h3>Short Safaris &amp; Extensions</h3>
         <p>Three or four nights in one reserve, added to a beach holiday or a business trip. Every short safari can begin something longer.</p>
@@ -567,7 +567,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/tailor-960.webp" srcset="assets/images/tailor-480.webp 480w, assets/images/tailor-720.webp 720w, assets/images/tailor-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A designer desk with safari maps, photographs and fabric swatches" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/tailor-960.webp" data-srcset="assets/images/tailor-480.webp 480w, assets/images/tailor-720.webp 720w, assets/images/tailor-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A designer desk with safari maps, photographs and fabric swatches">
         <span class="style-card__tag">Design it</span>
         <h3>Tailor Made Journeys</h3>
         <p>No template. Tell us your dates, your budget and what you want out of it, and a named designer builds the route around you.</p>
@@ -576,7 +576,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/offers-960.webp" srcset="assets/images/offers-480.webp 480w, assets/images/offers-720.webp 720w, assets/images/offers-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Green season grassland with a rainbow over distant acacias" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/offers-960.webp" data-srcset="assets/images/offers-480.webp 480w, assets/images/offers-720.webp 720w, assets/images/offers-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Green season grassland with a rainbow over distant acacias">
         <span class="style-card__tag">18 live offers</span>
         <h3>Special Offers</h3>
         <p>Green season rates, complimentary nights and reduced single supplements across the camps we hold closest.</p>
@@ -585,7 +585,7 @@
       </article>
 
       <article class="style-card">
-        <img class="style-card__img" src="assets/images/gift-960.webp" srcset="assets/images/gift-480.webp 480w, assets/images/gift-720.webp 720w, assets/images/gift-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A linen-wrapped gift box with a gold ribbon on a safari table" loading="lazy">
+        <img class="style-card__img" data-src="assets/images/gift-960.webp" data-srcset="assets/images/gift-480.webp 480w, assets/images/gift-720.webp 720w, assets/images/gift-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="A linen-wrapped gift box with a gold ribbon on a safari table">
         <span class="style-card__tag">Gifting</span>
         <h3>Gift Vouchers</h3>
         <p>A safari, a night, a balloon flight or a dinner in the bush — given to someone who will remember it for the rest of their life.</p>
@@ -666,7 +666,7 @@
 
     <div class="dest-grid">
       <article class="dest">
-        <img class="dest__img" src="assets/images/kenya-960.webp" srcset="assets/images/kenya-480.webp 480w, assets/images/kenya-720.webp 720w, assets/images/kenya-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Golden savannah and a lone acacia in the Maasai Mara at sunset" loading="lazy">
+        <img class="dest__img" data-src="assets/images/kenya-960.webp" data-srcset="assets/images/kenya-480.webp 480w, assets/images/kenya-720.webp 720w, assets/images/kenya-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Golden savannah and a lone acacia in the Maasai Mara at sunset">
         <span class="dest__country">Kenya</span>
         <h3>The Maasai Mara, Amboseli <em>and Laikipia</em></h3>
         <p class="dest__best">Best months<br><strong>Jul–Oct for the migration · Jan–Feb for clear skies</strong></p>
@@ -675,7 +675,7 @@
       </article>
 
       <article class="dest">
-        <img class="dest__img" src="assets/images/tanzania-960.webp" srcset="assets/images/tanzania-480.webp 480w, assets/images/tanzania-720.webp 720w, assets/images/tanzania-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Acacia-dotted Serengeti plains at golden hour" loading="lazy">
+        <img class="dest__img" data-src="assets/images/tanzania-960.webp" data-srcset="assets/images/tanzania-480.webp 480w, assets/images/tanzania-720.webp 720w, assets/images/tanzania-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Acacia-dotted Serengeti plains at golden hour">
         <span class="dest__country">Tanzania</span>
         <h3>Serengeti and <em>Ngorongoro Crater</em></h3>
         <p class="dest__best">Best months<br><strong>Dec–Mar for the calving · Jul–Oct for crossings</strong></p>
@@ -684,7 +684,7 @@
       </article>
 
       <article class="dest">
-        <img class="dest__img" src="assets/images/rwanda-960.webp" srcset="assets/images/rwanda-480.webp 480w, assets/images/rwanda-720.webp 720w, assets/images/rwanda-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Misty volcanic peaks above the terraced hills of Volcanoes National Park" loading="lazy">
+        <img class="dest__img" data-src="assets/images/rwanda-960.webp" data-srcset="assets/images/rwanda-480.webp 480w, assets/images/rwanda-720.webp 720w, assets/images/rwanda-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Misty volcanic peaks above the terraced hills of Volcanoes National Park">
         <span class="dest__country">Rwanda</span>
         <h3>Gorilla trekking in <em>Volcanoes National Park</em></h3>
         <p class="dest__best">Best months<br><strong>Jun–Sep · Dec–Feb</strong></p>
@@ -693,7 +693,7 @@
       </article>
 
       <article class="dest">
-        <img class="dest__img" src="assets/images/uganda-960.webp" srcset="assets/images/uganda-480.webp 480w, assets/images/uganda-720.webp 720w, assets/images/uganda-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Ancient rainforest light in Bwindi Impenetrable Forest" loading="lazy">
+        <img class="dest__img" data-src="assets/images/uganda-960.webp" data-srcset="assets/images/uganda-480.webp 480w, assets/images/uganda-720.webp 720w, assets/images/uganda-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Ancient rainforest light in Bwindi Impenetrable Forest">
         <span class="dest__country">Uganda</span>
         <h3>Gorillas in Bwindi, <em>chimps in Kibale</em></h3>
         <p class="dest__best">Best months<br><strong>Jun–Sep · Dec–Feb</strong></p>
@@ -702,7 +702,7 @@
       </article>
 
       <article class="dest">
-        <img class="dest__img" src="assets/images/zanzibar-960.webp" srcset="assets/images/zanzibar-480.webp 480w, assets/images/zanzibar-720.webp 720w, assets/images/zanzibar-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Dhows in Stone Town harbour at sunset" loading="lazy">
+        <img class="dest__img" data-src="assets/images/zanzibar-960.webp" data-srcset="assets/images/zanzibar-480.webp 480w, assets/images/zanzibar-720.webp 720w, assets/images/zanzibar-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Dhows in Stone Town harbour at sunset">
         <span class="dest__country">Zanzibar</span>
         <h3>Beach extensions and <em>private island stays</em></h3>
         <p class="dest__best">Best months<br><strong>Jun–Oct · Dec–Feb</strong></p>
@@ -711,7 +711,7 @@
       </article>
 
       <article class="dest">
-        <img class="dest__img" src="assets/images/ocean-960.webp" srcset="assets/images/ocean-480.webp 480w, assets/images/ocean-720.webp 720w, assets/images/ocean-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Granite boulders and turquoise water in the Seychelles" loading="lazy">
+        <img class="dest__img" data-src="assets/images/ocean-960.webp" data-srcset="assets/images/ocean-480.webp 480w, assets/images/ocean-720.webp 720w, assets/images/ocean-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Granite boulders and turquoise water in the Seychelles">
         <span class="dest__country">The Indian Ocean</span>
         <h3>Seychelles and Mauritius <em>after safari</em></h3>
         <p class="dest__best">Best months<br><strong>Apr–May, Oct–Nov · May–Dec in Mauritius</strong></p>
@@ -839,21 +839,21 @@
 
     <div class="post-grid">
       <article class="post post--placeholder">
-        <img loading="lazy" decoding="async" src="assets/images/mara-960.webp" srcset="assets/images/mara-480.webp 480w, assets/images/mara-720.webp 720w, assets/images/mara-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Placeholder image for a journal article">
+        <img decoding="async" data-src="assets/images/mara-960.webp" data-srcset="assets/images/mara-480.webp 480w, assets/images/mara-720.webp 720w, assets/images/mara-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Placeholder image for a journal article">
         <p class="post__meta">Article placeholder</p>
         <h3>Add your first <em>journal article</em></h3>
         <p>Replace this card with your own title, image, publish date and a one-line summary. No article exists behind it yet.</p>
         <span class="link-gold">Placeholder link <span class="arrow">→</span></span>
       </article>
       <article class="post post--placeholder">
-        <img loading="lazy" decoding="async" src="assets/images/suite-960.webp" srcset="assets/images/suite-480.webp 480w, assets/images/suite-720.webp 720w, assets/images/suite-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Placeholder image for a journal article">
+        <img decoding="async" data-src="assets/images/suite-960.webp" data-srcset="assets/images/suite-480.webp 480w, assets/images/suite-720.webp 720w, assets/images/suite-960.webp 960w" sizes="(min-width:1000px) 33vw, (min-width:640px) 50vw, 100vw" alt="Placeholder image for a journal article">
         <p class="post__meta">Article placeholder</p>
         <h3>Add your second <em>journal article</em></h3>
         <p>Replace this card with your own title, image, publish date and a one-line summary. No article exists behind it yet.</p>
         <span class="link-gold">Placeholder link <span class="arrow">→</span></span>
       </article>
       <article class="post post--placeholder">
-        <img loading="lazy" decoding="async" src="assets/images/nile-960.webp" srcset="assets/images/nile-480.webp 480w, assets/images/nile-720.webp 720w, assets/images/nile-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Placeholder image for a journal article">
+        <img decoding="async" data-src="assets/images/nile-960.webp" data-srcset="assets/images/nile-480.webp 480w, assets/images/nile-720.webp 720w, assets/images/nile-960.webp 960w" sizes="(min-width:900px) 50vw, 100vw" alt="Placeholder image for a journal article">
         <p class="post__meta">Article placeholder</p>
         <h3>Add your third <em>journal article</em></h3>
         <p>Replace this card with your own title, image, publish date and a one-line summary. No article exists behind it yet.</p>
@@ -1177,7 +1177,7 @@
   <div class="sheet__veil" data-close></div>
   <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
     <button class="sheet__close" data-close aria-label="Close itinerary">✕</button>
-    <div class="sheet__media"><img id="sheetImg" loading="lazy" decoding="async" sizes="(min-width:520px) 520px, 100vw" alt=""></div>
+    <div class="sheet__media"><img id="sheetImg" decoding="async" sizes="(min-width:520px) 520px, 100vw" alt=""></div>
     <div class="sheet__body">
       <p class="card__eyebrow" id="sheetEyebrow"></p>
       <h3 class="sheet__title" id="sheetTitle"></h3>
